@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".FirstFragment">
+<LinearLayout
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="30dp">
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Имя"
+        android:gravity="center"
+        android:text="@={viewModel.name}"
+        android:background="@color/grey"
+        android:padding="12.5dp"
+        android:layout_margin="5dp"/>
+
+    <EditText
+        android:gravity="center"
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:text="@={viewModel.email}"
+        android:background="@color/grey"
+        android:padding="12.5dp"
+        android:layout_margin="5dp"/>
+
+    <EditText
+        android:gravity="center"
+        android:id="@+id/etPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Номер телефона"
+        android:text="@={viewModel.phone}"
+        android:background="@color/grey"
+        android:padding="12.5dp"
+        android:layout_margin="5dp"/>
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Далее"
+        android:onClick="@{() -> viewModel.onNextClicked()}"
+        android:backgroundTint="@color/black"/>
+
+</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
