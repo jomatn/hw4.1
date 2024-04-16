@@ -18,9 +18,7 @@ class SecondFragment : Fragment() {
 
     private val args : SecondFragmentArgs by navArgs()
 
-    private var  name=""
-    private var  email=""
-    private var  phone=""
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,17 +30,17 @@ class SecondFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        name= args.name
-        email = args.email
-        phone = args.phone
+        val model = requireArguments().getParcelable<Model>("model")
+        if (model != null) {
+            val name= model.name
+            val email= model.email
+            val phone= model.phone
 
-
-
-        binding.apply {
-            textViewEmail.text = name
-            textViewEmail.text = email
-            textViewPhone.text = phone
+            binding.apply {
+                textViewEmail.text = name
+                textViewEmail.text = email
+                textViewPhone.text = phone
+            }
         }
     }
-
 }
